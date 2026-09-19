@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Destinations</title>
+    <style>
+        body { font-family: sans-serif; background-color: #144b7f; padding: 20px; }
+        .header { margin-bottom: 20px; }
+        
+        /* सर्च बार की स्टाइलिंग */
+        #searchInput { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 25px; box-sizing: border-box; }
+        
+        /* Grid Layout */
+        .destinations-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .dest-card { background: white; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .dest-card img { width: 100%; height: 150px; border-radius: 12px; object-fit: cover; margin-bottom: 10px;display: block; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <button onclick="window.history.back()">Back</button>
+    <h1>All Destinations</h1>
+</div>
+
+<!-- सर्च बार -->
+<input type="text" id="searchInput" placeholder="Search for a destination..." onkeyup="filterDestinations()">
+
+<div class="destinations-grid" id="destGrid">
+    <div class="dest-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPsE6uqtxDbvDnMBsCwvTBCDs-o2VaI2BrGz9vvpInF-TdHZlNclUu7C2z&s=10" alt="Coorg"><p class="dest-name">Coorg</p></div>
+    <div class="dest-card"><img src="https://hindi.nativeplanet.com/img/2018/06/virupaksha-temple-1528440375.jpg" alt="Hampi"><p class="dest-name">Hampi</p></div>
+    <div class="dest-card"><img src="https://content.r9cdn.net/rimg/dimg/a9/dd/d6b29241-city-44818-166a7453734.jpg?width=1366&height=768&crop=true" alt="Munnar"><p class="dest-name">Munnar</p></div>
+    <div class="dest-card"><img src="https://images.contentstack.io/v3/assets/blt06f605a34f1194ff/blt4cf134d7dc5ff2c0/68906f5f7adc79b45ae98a6f/iStock-2197451116-2-HEADER_MOBILE.jpg?format=webp&auto=avif&quality=60&crop=1%3A1&width=1440" alt="Udaipur"><p class="dest-name">Udaipur</p></div>
+    <div class="dest-card"><img src="https://media.cntravellerme.com/photos/68b6f73e5582520a305ec87b/16:9/w_2560%2Cc_limit/1225427289"alt="Dubai"><p class="dest-name">Dubai</p></div>
+    <div class="dest-card"><img src="https://s7ap1.scene7.com/is/image/incredibleindia/gateway-of-india-mumbai-maharashtra-1-attr-hero?qlt=82&ts=1742186736064"alt="Mumbai"><p class="dest-name">Mumbai</p></div>
+    <div class="dest-card"><img src="https://choptatourpackage.com/wp-content/uploads/2025/08/Social-Media-%E0%A4%B8%E0%A5%87-%E0%A4%AA%E0%A4%B9%E0%A4%B2%E0%A5%87-%E0%A4%B5%E0%A4%BE%E0%A4%B2%E0%A4%BE-%E0%A4%95%E0%A5%87%E0%A4%A6%E0%A4%BE%E0%A4%B0%E0%A4%A8%E0%A4%BE%E0%A4%A5-%F0%9F%99%8FHar-Har-Mahadev-%F0%9F%99%8Fkedarnath-hiluxvali-incredibleindia-1024x767.jpg"alt="Kadarnath"><p class="dest-name">Kadarnath</p></div>
+    <div class="dest-card"><img src="https://www.anubhavvacations.in/blog/wp-content/uploads/2025/01/kashmir-featured.webp"alt="Kashmir"><p class="dest-name">Kashmir</p></div>
+    <div class="dest-card"><img src="https://www.indianluxurytrains.com/wp-content/uploads/2015/06/Sun-Temple-of-konark-1.jpg"alt="orissa"><p class="dest-name">Orissa</p></div>
+    <div class="dest-card"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/00472737-1ecd-4917-b2e1-465c27d92ed8/dhl1hyq-29993209-25f7-4432-9d53-76131319a92d.jpg/v1/fill/w_1280,h_854,q_75,strp/_exploring_the_beauty_of_ooty__tamil_nadu_by_snehalvyas_dhl1hyq-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODU0IiwicGF0aCI6Ii9mLzAwNDcyNzM3LTFlY2QtNDkxNy1iMmUxLTQ2NWMyN2Q5MmVkOC9kaGwxaHlxLTI5OTkzMjA5LTI1ZjctNDQzMi05ZDUzLTc2MTMxMzE5YTkyZC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.T6WgMjIAZs9JmV8q6gi_4xP4PF6eSNbnDfpt8QmweMA"alt="Tamilnadu"><p class="dest-name">Tamilnadu</p></div>
+    <div class="dest-card"><img src="https://static.toiimg.com/photo/58490365/.jpg"alt="Kerala"><p class="dest-name">Kerala</p></div>
+    <div class="dest-card"><img src="https://hips.hearstapps.com/hmg-prod/images/the-fairy-pools-of-glenbrittle-isle-of-skye-1543317376.jpg"alt="Scotland"><p class="dest-name">Scotland</p></div>
+   <div class="dest-card"><img src="https://static.wixstatic.com/media/055605_65e20a7fcbc54e2e8720adfc2544c35e~mv2.jpg/v1/fill/w_1800,h_1082,al_c,q_85/taj_new_contant_edited.jpg" alt="Tajmahal"><p class="dest-name">Tajmahal</p></div>
+   <div class="dest-card"><img src="paris_seinen.webp" alt="paris"><p class="dest-name">Paris</p></div>
+   <div class="dest-card"><img src="ladakh.jpg" alt="ladakh"><p class="dest-name">Ladakh</p></div>
+   <div class="dest-card"><img src="manali.jpg" alt="manali"><p class="dest-name">Manali</p></div>
+   <div class="dest-card"><img src="goa.jpg" alt="goa"><p class="dest-name">Goa</p></div>
+   <div class="dest-card"><img src="https://media1.thrillophilia.com/filestore/4nkhbxf5kajdk9k2wjn5k2t1uq4w_shutterstock_1924109798.jpg?w=400&dpr=2" alt="ooty"><p class="dest-name">Ooty</p></div>
+   <div class="dest-card"><img src="jaipur.webp" alt="jaipur"><p class="dest-name">Jaipur</p></div>
+   <div class="dest-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREMiRdUwTs6qyXkbve4sTpBALjxeuzBZdNzxsFTMfDJ6Gw5GMgnah3jqI&s=10" alt="Darjeeling"><p class="dest-name">Darjeeling</p></div>
+
+
+</div>
+
+<script>
+    function filterDestinations() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('dest-card');
+        
+        for (let i = 0; i < cards.length; i++) {
+            let name = cards[i].querySelector('.dest-name').innerText.toLowerCase();
+            if (name.includes(input)) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

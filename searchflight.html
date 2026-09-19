@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search and Booking Portal</title>
+    <link rel="stylesheet" href="searchflight.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>✈️ Flight Booking System</h2>
+        
+        <!-- Search Form -->
+        <form id="flightSearchForm">
+            <div class="form-group">
+                <label for="origin">Origin Airport:</label>
+                <input type="text" id="origin" placeholder="e.g., Delhi (DEL)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="destination">Destination Airport:</label>
+                <input type="text" id="destination" placeholder="e.g., Mumbai (BOM)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="flightDate">Departure Date:</label>
+                <input type="date" id="flightDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="travelers">Travelers:</label>
+                <input type="number" id="travelers" min="1" value="1" required>
+            </div>
+
+            <button type="submit" id="searchBtn">Search Flights</button>
+        </form>
+
+       
+    </div>
+
+    <script src="home.js"></script>
+
+</body>
+</html>

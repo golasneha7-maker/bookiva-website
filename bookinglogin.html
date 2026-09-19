@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="sunmoon.css">
+    <link rel="javascript" href="server.js">
+</head>
+<body>
+        <div class="square-container">
+          <div class="container">
+          <div class="sky">
+          <div class="sun"></div>
+          <div class="moon"></div>
+           </div>
+             </div>
+             </div>
+             <div class="theme-btn-container">
+                  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">Day/Night</button>
+             </div>
+
+
+    <h1>Login</h1>
+    <form id="bookingForm">
+        <div class="form-row">
+            <div class="input-group">
+              
+              <input type="text" id="service" name="service" placeholder="" required>
+               <label for="name">Service Name</label>
+            </div>
+
+            
+            <div class="input-group">          
+                <input type="user" id="user" name="user" placeholder="" required>
+                <label for="user">User Name</label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="input-group">           
+              <input type="email" id="email" name="email" placeholder="" required>
+               <label for="email id">Email Id</label>
+            </div>
+
+            <div class="input-group">           
+              <input type="password" id="password" name="password" placeholder=""  required>
+              <label for="password">Password</label>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="input-group">            
+              <input type="tel" id="phone" name="phone" placeholder=""  required>
+               <label for="phone">Phone No.</label>
+            </div>
+
+            <div class="input-group">            
+               <input type="date" id="date" name="date" placeholder="Date" required="required">
+               <label for="date">Date</label>
+            </div>
+
+
+        </div>
+
+        <div class="form-row">
+            <div class="input-group">            
+                <input type="time" id="time" name="time" placeholder="time" required>
+                <label for="time">Time</label>
+            </div>
+
+            <div class="input-group">             
+                <input type="text" id="business" name="business"  placeholder="" required>
+                <label for="Business">Choose a Business</label>       
+            </div>
+        </div>
+
+        <button type="submit">Book Now</button>
+    </form>
+     <script>
+         document.getElementById('bookingForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+
+            const token = localStorage.getItem('token');
+            const bookingData = {
+                service: document.getElementById('service').value,
+                user :  document.getElementById('user').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                phone: document.getElementById('phone').value,
+                time: document.getElementById('time').value,
+                date: document.getElementById('date').value,
+                business: document.getElementById('business').value,
+            };
+
+
+            const response = await fetch('http://localhost:3000/api/booking', {
+                method: 'POST',
+                 headers: {
+                  'Content-Type': 'application/json'
+                 },
+                body: JSON.stringify(bookingData)
+            });
+
+
+                if (response.ok) {
+                    alert('Booking successful!');
+                }
+                 else {
+                  
+                    alert('Booking failed!');
+                }
+
+
+            
+            
+        });
+
+        async function loadBusiness() {
+            try{
+                 const response=await fetch('/api/business');
+                const businesses= await response.json();
+                const select=  document.getElementById('business');
+                businesses.forEach(business => {
+                    const option= document.createElement('option');
+                    option.value = business._id;
+                    option.textContent = business.name;
+
+                    select.appendChild(option);
+                });
+
+            }
+
+            catch(error){
+                console.error("Error loading business:",error);
+            }
+           
+        }
+
+         
+          function toggleTheme() {
+        
+              document.querySelector('.container').classList.toggle('night');
+             }
+
+
+     </script>
+   
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Payment Method</title>
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>Select Payment Method</h2>
+    <p class="subtitle">Choose a payment option according to your convenience</p>
+
+    <form class="payment-options">
+      <!-- UPI Option -->
+      <label class="option-card">
+        <input type="radio" name="payment" value="upi" checked>
+        <span class="custom-radio"></span>
+        <div class="option-details">
+          <span class="option-title">UPI / QR Code</span>
+          <span class="option-desc">Google Pay, PhonePe, Paytm</span>
+        </div>
+      </label>
+
+      <!-- Card Option -->
+      <label class="option-card">
+        <input type="radio" name="payment" value="card">
+        <span class="custom-radio"></span>
+        <div class="option-details">
+          <span class="option-title">Credit / Debit Card</span>
+          <span class="option-desc">Visa, Mastercard, RuPay</span>
+        </div>
+      </label>
+
+      <!-- Net Banking Option -->
+      <label class="option-card">
+        <input type="radio" name="payment" value="netbanking">
+        <span class="custom-radio"></span>
+        <div class="option-details">
+          <span class="option-title">Net Banking</span>
+          <span class="option-desc">All major Indian banks</span>
+        </div>
+      </label>
+
+      <!-- Cash on Delivery Option -->
+      <label class="option-card">
+        <input type="radio" name="payment" value="cod">
+        <span class="custom-radio"></span>
+        <div class="option-details">
+          <span class="option-title">Cash on Delivery (COD)</span>
+          <span class="option-desc">Pay at the time of delivery</span>
+        </div>
+      </label>
+
+      <!-- Submit Button -->
+      <button type="submit" class="pay-btn">Proceed</button>
+    </form>
+  </div>
+
+
+
+
+  <script>
+    const paymentForm = document.querySelector('.payment-options');
+    paymentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const selectedPayment = document.querySelector('input[name="payment"]:checked').value;
+      alert(`You have selected: ${selectedPayment}`);
+      // Here you can add logic to redirect to the respective payment gateway or process the payment
+    });
+
+
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookiva Support</title>
+    <style>
+        body { font-family: sans-serif; background-color: #125082; padding: 20px; }
+        .support-container { max-width: 500px; margin: 0 auto; }
+        h1, h3 { color: #040404; text-align: center; }
+
+        /* Search Bar */
+        .search-box { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 25px; box-sizing: border-box; }
+
+        /* FAQ (Accordion) */
+        details { background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd; }
+        summary { font-weight: bold; cursor: pointer; outline: none; }
+        details p { margin-top: 10px; color: #666; }
+
+        /* Contact Form and Buttons */
+        textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; resize: none; }
+        .submit-btn { width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; }
+        
+        /* Call Button */
+        .call-btn { display: block; width: 100%; padding: 15px; background-color: #28a745; color: white; text-align: center; text-decoration: none; border-radius: 6px; margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="support-container">
+    <h1>Help Center</h1>
+    
+    <!-- Search Bar -->
+    <input type="text" class="search-box" placeholder="Search for questions...">
+
+    <!-- FAQ Section -->
+    <h3>Frequently Asked Questions</h3>
+    <details>
+        <summary>How to make a booking on Bookiva?</summary>
+        <p>Select your preferred service and click on the 'Book Now' button.</p>
+    </details>
+    <details>
+        <summary>What to do if payment fails?</summary>
+        <p>Don't worry, if the amount has been deducted, it will be refunded automatically within 24-48 hours.</p>
+    </details>
+
+    <!-- Contact Section -->
+    <h3>Contact Us</h3>
+    <form>
+        <textarea rows="4" placeholder="Describe your issue here..."></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <!-- Call Button -->
+    <a href="tel:+919876543210" class="call-btn">Call Customer Care</a>
+</div>
+
+</body>
+</html>

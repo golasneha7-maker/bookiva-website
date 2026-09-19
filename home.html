@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookiva App</title>
+    <link  rel= "stylesheet"  href="style.css">
+    
+</head>
+<body>
+    
+     <nav class="navbar">
+        <div class="logo">Bookiva</div>
+           
+          <div class="nav-main">
+                
+                <a href="home.html">🏠 Home</a>
+                <a href="services.html">⚙️ Services</a>
+                <a href="My Booking.html">📅 Bookings</a>
+                <a href="profile.html">👤 Profile</a>
+                <div class="menu-icon" onclick="toggleMenu()">&#8942;</div>
+          </div>
+            <ul class="nav-dropdown" id="navLinks">
+  
+                 <li><a href="aboutus.html">About Us</a></li>
+                 <li><a href="help.html">Support / Help</a></li>
+                 <li><a href="feedback.html">Feedback</a></li>
+                 <li><a href="setting.html">Settings</a></li>
+                 <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            </ul>
+          
+       </nav>  
+          
+          
+
+<div class="hero-background"></div>
+   
+  <!-- Search Header -->
+  <div class="content-wrapper">
+    <h1 style="color: rgb(5, 30, 36); text-align: center; margin-top: 200px;">Book Everything.<br>Anywhere. Anytime.</h1>
+  
+
+     <!-- Tabs Menu -->
+
+    <div class="tab-nav">
+           <div class="tab-link active" onclick="showTab(event, 'flights')">Flights</div>
+            <div class="tab-link" onclick="showTab(event, 'hotels')">Hotels</div>
+            <div class="tab-link" onclick="showTab(event, 'activities')">Activities</div>
+            <div class="tab-link" onclick="showTab(event, 'cars')">Cars</div>
+    </div>
+
+     <!-- फॉर्म एरिया -->
+   <div class="form-container">
+    <form id="flightSearchForm">
+         <div id="flights" class="tab-content active">
+            <input type="text" id="origin" placeholder="From (Origin)" required>
+               <input type="text" id="destination" placeholder="To (Destination)" required>
+               <input type="date" id="flight-dates" placeholder="Flight Dates" required>
+               <input type="number" id="travellers" placeholder="Travellers" required>
+               <button type="submit" id="search-btn">Search Flights</button>
+    </div>
+    </form>
+    <div id="hotels" class="tab-content">
+        <input type="text" id="hotel-city" placeholder="Enter City or Hotel Name" required>
+        <input type="date" id="hotel-dates" placeholder="Check-in / Check-out Dates" required>
+        <button type="submit" id="search-btn">Search Hotels</button>
+    </div>
+    <div id="activities" class="tab-content">
+        <input type="text" id="activity-search" placeholder="Search Activities" required>
+        <button type="submit" id="search-btn">Search Activities</button>
+    </div>
+    <div id="cars" class="tab-content">
+        <input type="text" id="car-pickup" placeholder="Pickup Location" required>
+        <button type="submit" id="search-btn">Search Cars</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Popular Destinations -->
+    <div class="destination-header">
+      <h2>Explore Popular Destinations</h2>
+      <button id="see-all-btn">See All </button>
+    </div>
+<div class="destination">
+    <div class="dest-grid">
+      <div class="dest-item"><img src="paris_seinen.webp" alt="Paris">Paris</div>
+       <div class="dest-item"><img src="bali.webp" alt="Bali">Bali</div>
+        <div class="dest-item"><img src="bangalore.webp" alt="Bangalore">Bangalore</div>
+         <div class="dest-item"><img src="manali.jpg" alt="Manali">Manali</div>
+          <div class="dest-item"><img src="ladakh.jpg" alt="Ladakh">Ladakh</div>
+           <div class="dest-item"><img src="goa.jpg"  alt="Goa">Goa</div>
+            <div class="dest-item"> <img src="jaipur.webp" alt="Jaipur"> Jaipur</div>
+  
+    </div>
+</div>
+</div>
+
+<section class="offers-section">
+  <h2 class="section-title">Exclusive Offers & Deals</h2>
+  <div class="offers-container">
+    
+    <!-- Offer Card 1 -->
+    <div class="offer-card blue-gradient">
+      <div class="offer-content">
+        <p class="tag">Limited Time</p>
+        <h3 class="offer-title">Flat 20% OFF</h3>
+        <p class="offer-desc">On your first flight booking!</p>
+        <button class="offer-btn">Grab Deal</button>
+      </div>
+      <div class="offer-icon">✈️</div>
+    </div>
+
+    <!-- Offer Card 2 -->
+    <div class="offer-card orange-gradient">
+      <div class="offer-content">
+        <p class="tag">Bank Offer</p>
+        <h3 class="offer-title">Extra ₹500 OFF</h3>
+        <p class="offer-desc">Use HDFC Card at checkout.</p>
+        <button class="offer-btn">View Details</button>
+      </div>
+      <div class="offer-icon">💳</div>
+    </div>
+    
+  </div>
+ </section>
+
+<!--travel inspiration&bloogs-->
+
+
+<section class="blog-section">
+  <h2 class="section-title">Travel Inspiration</h2>
+  <div class="blog-container">
+    
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Mountain">
+      <div class="blog-info">
+        <h3>Top 5 Hill Stations</h3>
+        <p>Escape the heat this summer with these cool destinations.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1" alt="Nature">
+      <div class="blog-info">
+        <h3>Budget Travel Tips</h3>
+        <p>How to travel more while spending much less.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!---traveller reviews-->
+
+<section class="reviews-section">
+  <h2 class="section-title">What Our Travelers Say</h2>
+  <div class="reviews-container">
+    
+    <!-- Review Card 1 -->
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"My trips with Bookiva was incredibly smooth. Everythings  was so easy to book!"</p>
+      <div class="user-info">
+        <h4>- Rahul Sharma</h4>
+      </div>
+    </div>
+
+    <!-- Review Card 2 -->
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"A truly fantastic experience! The deals and offers were excellent."</p>
+      <div class="user-info">
+        <h4>- Priya Verma</h4>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Trust Badges Section -->
+<section class="trust-section">
+  <div class="trust-item">
+    <span>🛡️</span>
+    <p>Secure Booking</p>
+  </div>
+  <div class="trust-item">
+    <span>🎧</span>
+    <p>24/7 Support</p>
+  </div>
+  <div class="trust-item">
+    <span>🔄</span>
+    <p>Easy Refunds</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <h3>Bookiva</h3>
+    <p>Making your travel dreams a reality.</p>
+    <div class="social-links">
+      <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Bookiva. All rights reserved.</p>
+</footer>
+
+
+
+
+    
+      
+
+<script src="home.js"></script>
+    
+</body>
+</html>

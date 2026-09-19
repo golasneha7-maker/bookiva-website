@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedback</title>
+    <style>
+
+      .body{
+        background-color:#2575fc;
+
+      }
+    
+     .feedback-card {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: #8a21a4;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid #e0e0ff;
+}
+.stars { cursor: pointer; font-size: 40px; color: #ddd; transition: 0.3s; }
+.stars .active { color: #ffca28; text-shadow: 0 0 10px #ffca28; }
+textarea { 
+  width: 100%; height: 100px; padding: 12px; border-radius: 12px; 
+  border: 2px solid #ddd; box-sizing: border-box; resize: none;
+}
+button { 
+  margin-top: 20px; padding: 12px 30px; border: none; 
+  background: linear-gradient(to right, #6a11cb, #2575fc); 
+  color: white; font-weight: bold; border-radius: 25px; cursor: pointer;
+  transition: 0.3s;
+}
+button:hover { transform: scale(1.05); }
+
+    </style>
+</head>
+<body>
+   <div class="feedback-card">
+  <h3>Rate Bookiva</h3>
+  <div class="stars" id="starContainer">
+    <span class="star" data-value="1">&#9733;</span>
+    <span class="star" data-value="2">&#9733;</span>
+    <span class="star" data-value="3">&#9733;</span>
+    <span class="star" data-value="4">&#9733;</span>
+    <span class="star" data-value="5">&#9733;</span>
+  </div>
+  
+  <label for="comments" style="display:block; margin: 15px 0 5px; font-weight: bold;">What can we improve?</label>
+  <textarea id="comments" placeholder="Write your suggestions here..."></textarea>
+  
+  <button id="submitBtn">Submit Feedback</button>
+</div>
+
+
+<script>
+
+const stars = document.querySelectorAll('.star');
+let selectedRating = 0;
+
+stars.forEach((star, index) => {
+  star.addEventListener('click', () => {
+    selectedRating = index + 1;
+    stars.forEach((s, i) => {
+      s.classList.toggle('active', i <= index);
+    });
+  });
+});
+
+document.getElementById('submitBtn').addEventListener('click', () => {
+  const comment = document.getElementById('comments').value;
+  if (selectedRating === 0) {
+    alert("Please select a star rating!");
+  } else {
+    alert(`Thank you! Your ${selectedRating}-star rating and feedback: "${comment}" has been received.`);
+  }
+});
+
+
+
+
+
+</script>
+</body>
+</html>

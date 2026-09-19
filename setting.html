@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookiva Settings</title>
+    <style>
+        body { font-family: sans-serif; background-color: #0d4b68; padding: 20px; }
+        .settings-container { max-width: 500px; margin: 0 auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        
+        .setting-group { margin-top: 20px; }
+        .setting-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; }
+        .setting-item span { font-size: 16px; color: #555; }
+
+        /* Toggle Switch */
+        .switch { position: relative; display: inline-block; width: 50px; height: 24px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 24px; }
+        .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: #007bff; }
+        input:checked + .slider:before { transform: translateX(26px); }
+
+        .logout-btn { display: block; width: 100%; padding: 12px; background-color: #dc3545; color: white; border: none; border-radius: 6px; margin-top: 30px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="settings-container">
+    <h1>Settings</h1>
+    
+    <div class="setting-group">
+        <h3>Account</h3>
+        <div class="setting-item">
+            <span>Edit Profile</span>
+            <span>></span>
+        </div>
+        <div class="setting-item">
+            <span>Change Password</span>
+            <span>></span>
+        </div>
+    </div>
+
+    <div class="setting-group">
+        <h3>Notifications</h3>
+        <div class="setting-item">
+            <span>Push Notifications</span>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <span>Email Updates</span>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <button id="logoutBtn" class="logout-btn">Log Out</button>
+</div>
+<script>
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+        // Clear user session or token here if applicable
+        alert('You have been logged out.');
+        window.location.href = 'index.html'; // Redirect to login page
+    });
+</script>
+</body>
+</html>

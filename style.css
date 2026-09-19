@@ -1,0 +1,452 @@
+
+body { font-family:Arial, Helvetica, sans-serif; margin: 0; padding: 0; background-color: #19519f; }
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #020000; /* आपका ब्लैक कलर */
+  padding:20px  0px;
+  width: 100%;
+  color: rgb(248, 246, 246);
+  position: fixed; /* स्क्रीन पर फिक्स रखने के लिए */
+  z-index: 1000;
+  left: 0;
+  right: 1;
+
+}
+
+.logo {
+
+  color: #186482;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-main{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-main a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu-icon{
+  font-size: 30px;
+  cursor: pointer;
+
+}
+
+.nav-dropdown {
+  display: none; /* शुरू में छिपा रहेगा */
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #b1a3a3;
+  color: #020000;
+  list-style: none; 
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-dropdown li {
+  padding: 8px 0;/* क्लिक करने पर दिखेगा */
+}
+
+
+.nav-dropdown a{
+  color: #020000;
+  text-decoration: none;
+}
+
+
+
+.nav-dropdown.active {
+  display: block;
+}
+
+
+
+
+
+
+
+
+.app-container {
+  font-family: sans-serif;
+  background-color: #f8fcfd;
+  padding: 20px;
+  border-radius: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+        .hero { text-align: center; padding: 30px; }
+
+        /* टैब का स्टाइलिश कंटेनर */
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0b354b;
+            padding: 25px 0;
+            border-radius: 15px 15px 0 0;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .tab-link {
+            color: #b5d3b2;
+            cursor: pointer;
+            padding: 5px 20px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .tab-link.active { color: white; border-bottom: 3px solid white; }
+
+        /* सर्च फॉर्म का स्टाइलिश बॉक्स */
+        .form-container {
+            background: white;
+            padding: 20px;
+            max-width: 850px;
+            margin: -100px auto 40px auto;
+            border-radius: 12px ;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            margin-top: 0px;
+        }
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .input-row{
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+          margin-bottom: 15px;
+
+        }
+
+
+        .input-row input{
+          flex: 1;
+          min-width: 200px;
+        }
+
+
+
+
+
+
+
+        #search-btn{
+            width: 100%;
+            padding: 15px;
+            background-color: #0f276b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            z-index: 1000;
+            pointer-events: auto;
+        }
+
+        #search-btn:hover{
+            background-color: #03102b;
+        }
+
+
+
+.hero-background{
+  background-image: url(bookiva\ image.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    z-index: -1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.search-box {
+  background: white;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dest-grid {
+  display: flex;
+  gap: 150px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.dest-item{
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.dest-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ff9800;
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.input-group{
+  flex: 1;
+}
+
+
+
+.destination-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.see-all{
+  margin-left: auto;
+}
+
+.destination-header{
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+}
+
+
+.profile-page {
+  padding: 20px;
+  background-color: #135190;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.user-info {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0,0.05);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background: #3498db;
+  color: white;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.wallet-section {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.profile-menu {
+  background: rgb(244, 249, 253);
+  border-radius: 15px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0,0.05);
+}
+
+.menu-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.logout {
+  color: red;
+  font-weight: bold;
+}
+
+
+
+/*offer-section*/
+
+.offers-section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+.section-title { font-size: 24px; font-weight: bold; margin-bottom: 20px; }
+
+.offers-container { display: flex; gap: 20px; }
+
+.offer-card { 
+  flex: 1; padding: 25px; border-radius: 15px; color: white; 
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.blue-gradient { background: linear-gradient(to right, #3b82f6, #1d4ed8); }
+.orange-gradient { background: linear-gradient(to right, #fb923c, #ef4444); }
+
+.tag { font-size: 12px; text-transform: uppercase; margin-bottom: 5px; opacity: 0.9; }
+.offer-title { font-size: 22px; margin: 5px 0; }
+.offer-desc { font-size: 14px; opacity: 0.9; }
+
+.offer-btn { 
+  margin-top: 15px; background: white; border: none; padding: 8px 15px; 
+  border-radius: 8px; font-weight: bold; cursor: pointer; color: #333;
+}
+
+.offer-icon { font-size: 40px; }
+
+/* मोबाइल के लिए रिस्पॉन्सिव */
+@media (max-width: 768px) {
+  .offers-container { flex-direction: column; }
+}
+
+
+
+/* इन लाइनों को अपनी CSS फाइल के सबसे नीचे जोड़ें */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important; /* इसे 100% या 100vh से हटाकर auto करें */
+    min-height: 100vh !important;
+    overflow-x: hidden !important; /* सिर्फ हॉरिजॉन्टल स्क्रॉल छिपाएं */
+    overflow-y: auto !important;   /* वर्टिकल स्क्रॉल हमेशा ऑन रखें */
+}
+
+/* अगर कोई कंटेनर पूरी स्क्रीन को घेरे हुए है, तो उसे ठीक करें */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    z-index: -1;
+    /* यह पक्का करें कि ये कंटेंट के ऊपर न आए */
+}
+
+
+
+
+
+/*travel inspiration&blogs*/
+
+.blog-section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+.blog-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+.blog-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.blog-card img { width: 100%; height: 200px; object-fit: cover; }
+.blog-info { padding: 15px; }
+.blog-info h3 { margin: 0 0 10px; }
+.blog-info a { color: #2d5a27; font-weight: bold; text-decoration: none; }
+
+/*traveller reviews*/
+.reviews-section { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+
+.reviews-container { 
+  display: flex; 
+  gap: 20px; 
+  overflow-x: auto; /* मोबाइल पर हॉरिजॉन्टल स्क्रॉल के लिए */
+  padding-bottom: 20px;
+}
+
+.review-card { 
+  background: white; 
+  min-width: 300px; 
+  padding: 25px; 
+  border-radius: 15px; 
+  box-shadow: 0 5px 35px rgba(0,0,0,0.1);
+}
+
+.stars { color: #f59e0b; margin-bottom: 10px; }
+.review-card p { font-style: italic; color: #555; margin-bottom: 15px; }
+.user-info h4 { color: #2d5a27; font-weight: bold; }
+
+
+/* Trust Section */
+.trust-section { 
+  display: flex; justify-content: space-around; padding: 40px 20px; 
+  background: #fdfdfd; border-top: 1px solid #eee; 
+}
+.trust-item { text-align: center; font-weight: bold; color: #3c6a2a; }
+.trust-item span { font-size: 30px; display: block; margin-bottom: 5px; }
+
+/* Footer Section */
+.footer { 
+  background:linear-gradient(to right, #550f8e, #113996); color: white; padding: 40px 20px; text-align: center; 
+}
+.social-links a { color: white; margin: 0 10px; text-decoration: none; }
+.copyright { margin-top: 20px; opacity: 0.7; font-size: 14px; }
+
+
+
+
+

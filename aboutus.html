@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bookiva</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background-color: #0f346b; padding: 20px; color: #333; }
+        .about-container { max-width: 600px; margin: 40px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); opacity: 0; transition: opacity 1.5s ease-in; }
+        h1 { color: #007bff; text-align: center; }
+        .vision { border-left: 4px solid #007bff; padding-left: 15px; margin: 20px 0; font-style: italic; }
+        .footer-note { text-align: center; margin-top: 30px; font-size: 0.9em; color: #777; }
+    </style>
+</head>
+<body>
+
+<div class="about-container" id="aboutContent">
+    <h1>About Bookiva</h1>
+    <p>Welcome to <strong>Bookiva</strong>, your ultimate partner in seamless service booking. We aim to simplify your daily tasks by connecting you with top-rated professionals instantly.</p>
+    
+    <div class="vision">
+        "Our vision is to make reliable services accessible to everyone, everywhere, with just a single tap."
+    </div>
+    
+    <p>Whether you need a repair service, a salon visit, or expert consultation, Bookiva ensures a hassle-free and transparent experience every time.</p>
+    
+    <p class="footer-note">&copy; 2026 Bookiva App. All rights reserved.</p>
+</div>
+
+<script>
+    // JavaScript to fade in the content on load
+    window.onload = () => {
+        const element = document.getElementById('aboutContent');
+        element.style.opacity = 1;
+    };
+</script>
+
+</body>
+</html>

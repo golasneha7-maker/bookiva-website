@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up page</title>
+    <style>
+        body { font-family: sans-serif; background-color: #025385; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .auth-container { background: rgb(4, 36, 63); padding: 30px; border-radius: 12px; box-shadow: 0 15px 80px rgba(1, 5, 10, 0.1); width: 100%; max-width: 350px; text-align: center; }
+        h2 { color: #fafafa; }
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background-color: #47a13b; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { background-color: #46b324; }
+        .message { margin-top: 15px; font-size: 14px; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div class="auth-container">
+    <h2>Welcome!</h2>
+    <form id="signupForm">
+        <input type="text" id="username" placeholder="User Name" required>
+        <input type="email" id="email" placeholder="Email Id" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit"  id="signupBtn">Sign Up</button>
+    </form>
+    <p class="message" id="msg"></p>
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

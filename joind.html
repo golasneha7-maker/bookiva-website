@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { background-color: #0d355b; color: white; }
+        .page { display: none; padding: 20px; }
+        #active-page { display: block; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Login Page -->
+    <div id="login-page" class="page" style="display: block;">
+        <h2>Login to Bookiva</h2>
+        <button onclick="loginUser()">Login (Simulate JWT)</button>
+    </div>
+
+    <!-- 2. Home Page -->
+    <div id="home-page" class="page">
+        <h1>Welcome Home, Bookiva User!</h1>
+        <button onclick="goToSettings()">Settings</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- 3. Settings Page -->
+    <div id="settings-page" class="page">
+        <h1>Settings</h1>
+        <button onclick="goToHome()">Back to Home</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        // पेज स्विच करने का फंक्शन
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        // Login Logic
+        function loginUser() {
+            // यहाँ आप अपनी API से JWT रिसीव करेंगी
+            const mockToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."; 
+            localStorage.setItem('jwtToken', mockToken);
+            showPage('home-page');
+        }
+
+        // Navigation
+        function goToSettings() { showPage('settings-page'); }
+        function goToHome() { showPage('home-page'); }
+
+        // Logout Logic
+        function logout() {
+            localStorage.removeItem('jwtToken');
+            showPage('login-page');
+        }
+
+        // App Initialization
+        window.onload = () => {
+            if (localStorage.getItem('jwtToken')) {
+                showPage('home-page');
+            } else {
+                showPage('login-page');
+            }
+        };
+    </script>
+</body>
+</html>
